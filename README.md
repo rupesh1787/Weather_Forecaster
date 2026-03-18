@@ -1,20 +1,45 @@
-# Weather_Forecaster
+# Weather Forecaster
 
-## Wind Forecast Monitoring
+Wind Forecast Monitoring is a full-stack analytics dashboard that compares predicted wind power with actual wind generation, helping users quickly understand forecast performance.
 
-### Live demo
-
-[https://wind-forecast-one.vercel.app](https://wind-forecast-one.vercel.app)
-
-A small full‑stack app to compare actual vs forecast wind‑related series with horizon‑based error analysis.
-
-The repository also includes an exploratory analysis notebook (WindForecastAnalysis.ipynb) that documents data understanding, checks, and prototype visualisations used while designing the app.
+## Features
+- Interactive forecast vs actual chart
+- Prediction error trend chart
+- Filter bar with quick ranges, custom dates, and forecast delay
+- Plain-language quick summary for non-technical users
+- Insight cards and advanced horizon analysis
+- Sortable, paginated raw data table with CSV export
 
 ## Tech Stack
-- Backend: Node.js, Express
-- Frontend: React + Vite, Recharts
+- Frontend: React, TypeScript, Vite, Tailwind CSS, Recharts, React Query
+- Backend: Node.js, Express, Axios
 
+## Project Structure
+- `frontend/`: Dashboard UI and client-side logic
+- `backend/`: API server and data processing services
+- `WindForecastAnalysis.ipynb`: Exploratory analysis notebook
 
+## Local Development
+1. Start backend:
 
-## Analysis Notebook
-- WindForecastAnalysis.ipynb: Google Colab–style notebook showing data exploration, cleaning steps, and example plots that informed the final dashboard.
+```bash
+cd backend
+npm install
+npm start
+```
+
+2. Start frontend:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+3. Open:
+- `http://localhost:5173`
+
+## Deployment Notes
+- Deploy backend first and copy its base URL.
+- Set `VITE_API_BASE_URL` in frontend deployment to point to backend.
+- Deploy frontend after environment configuration.
