@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import type { ApiResponse, DashboardFilters, HorizonMetric, KpiItem } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD ? 'https://weather-forecaster-sogc.onrender.com' : '');
 const COMPARISON_HORIZONS = [1, 4, 8, 12, 24, 48];
 
 function datetimeLocalToUtcIso(value: string): string | null {
