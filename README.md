@@ -1,4 +1,6 @@
-# Wind Forecast Monitoring
+# Weather_Forecaster
+
+## Wind Forecast Monitoring
 
 ### Live demo
 
@@ -16,6 +18,3 @@ The repository also includes an exploratory analysis notebook (WindForecastAnaly
 
 ## Analysis Notebook
 - WindForecastAnalysis.ipynb: Google Colab–style notebook showing data exploration, cleaning steps, and example plots that informed the final dashboard.
-
-
-
