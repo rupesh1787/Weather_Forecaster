@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-appBorder;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-appBg font-sans text-textPrimary antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-dashboard {
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(96, 165, 250, 0.24), transparent 38%),
+      radial-gradient(circle at 85% 8%, rgba(34, 197, 94, 0.18), transparent 30%),
+      linear-gradient(170deg, rgba(16, 29, 52, 1), rgba(17, 30, 56, 1));
+  }
+
+  .texture-grid {
+    background-size: cover, cover, cover;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 999px;
+}
+
+.theme-light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.theme-light .bg-appBg {
+  background-color: #f8fafc;
+}
+
+.theme-light .bg-card {
+  background-color: #ffffff;
+}
+
+.theme-light .border-appBorder {
+  border-color: #e2e8f0;
+}
+
+.theme-light .text-textPrimary {
+  color: #0f172a;
+}
+
+.theme-light .text-textSecondary {
+  color: #475569;
+}
+
+.theme-light .bg-dashboard {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.18), transparent 36%),
+    radial-gradient(circle at 85% 8%, rgba(34, 197, 94, 0.14), transparent 30%),
+    linear-gradient(170deg, #f8fafc, #eaf0ff);
+}
