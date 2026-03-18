@@ -16,6 +16,18 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+// Root endpoint for platform checks and human-friendly status.
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'Wind Forecast Monitoring API',
+    endpoints: {
+      health: '/health',
+      data: '/api/data?start=<ISO>&end=<ISO>&horizon=<hours>'
+    }
+  });
+});
+
 // API routes
 app.use('/api', dataRoutes);
 
