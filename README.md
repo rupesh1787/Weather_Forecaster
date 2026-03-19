@@ -2,6 +2,11 @@
 
 Wind Forecast Monitoring is a full-stack analytics dashboard that compares predicted wind power with actual wind generation, helping users quickly understand forecast performance.
 
+## Production Links
+- Frontend: https://weather-forecaster-orcin.vercel.app/
+- Backend API: https://weather-forecaster-sogc.onrender.com
+- Backend Health Check: https://weather-forecaster-sogc.onrender.com/health
+
 ## Features
 - Interactive forecast vs actual chart
 - Prediction error trend chart
