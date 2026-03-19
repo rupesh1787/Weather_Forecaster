@@ -5,15 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        appBg: '#0B1220',
-        card: '#111827',
-        appBorder: '#1F2937',
-        accent: '#3B82F6',
-        forecast: '#22C55E',
-        actual: '#60A5FA',
-        errorBar: '#F97316',
-        textPrimary: '#E5E7EB',
-        textSecondary: '#9CA3AF',
+        appBg: '#EAF3FF',
+        card: '#F7FBFF',
+        appBorder: '#C6DDF5',
+        accent: '#2F6FDF',
+        forecast: '#1EA672',
+        actual: '#3F8CFF',
+        errorBar: '#F59E0B',
+        textPrimary: '#102A43',
+        textSecondary: '#4C6784',
         lightBg: '#F8FAFC',
         lightCard: '#FFFFFF',
         lightBorder: '#E2E8F0',
@@ -21,8 +21,8 @@ module.exports = {
         lightTextSecondary: '#475569'
       },
       boxShadow: {
-        panel: '0 10px 40px rgba(15, 23, 42, 0.35)',
-        glow: '0 0 0 1px rgba(59,130,246,0.25), 0 10px 30px rgba(59,130,246,0.2)'
+        panel: '0 12px 34px rgba(43, 95, 171, 0.16)',
+        glow: '0 0 0 1px rgba(47,111,223,0.25), 0 12px 24px rgba(47,111,223,0.2)'
       },
       fontFamily: {
         sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],

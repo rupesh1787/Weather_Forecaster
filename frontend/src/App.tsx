@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import { MoonStar, SunMedium } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import FiltersPanel from './components/filters/FiltersPanel';
 import KpiCards from './components/cards/KpiCards';
 import InsightSummary from './components/cards/InsightSummary';
@@ -9,17 +8,13 @@ import MaeHorizonTable from './components/tables/MaeHorizonTable';
 import RawDataTable from './components/tables/RawDataTable';
 import EmptyState from './components/shared/EmptyState';
 import { toInputValue, useForecastDashboard } from './hooks/useForecastDashboard';
-import type { DashboardFilters, ThemeMode } from './types';
+import type { DashboardFilters } from './types';
 
 const MIN_PICKER_DATE = new Date('2025-01-01T00:00:00Z');
 const DEFAULT_START = new Date('2025-01-01T00:00:00Z');
 const DEFAULT_END = new Date('2025-01-02T00:00:00Z');
 
 export default function App() {
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    const saved = window.localStorage.getItem('wf-theme');
-    return saved === 'light' ? 'light' : 'dark';
-  });
   const [draftFilters, setDraftFilters] = useState<DashboardFilters>({
     start: toInputValue(DEFAULT_START),
     end: toInputValue(DEFAULT_END),
@@ -46,22 +41,6 @@ export default function App() {
     empty
   } = useForecastDashboard(appliedFilters);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    const body = document.body;
-
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      body.classList.remove('theme-light');
-      window.localStorage.setItem('wf-theme', 'dark');
-      return;
-    }
-
-    root.classList.remove('dark');
-    body.classList.add('theme-light');
-    window.localStorage.setItem('wf-theme', 'light');
-  }, [theme]);
-
   const showLoading = isLoading || isFetching;
 
   const applyFilters = () => {
@@ -70,7 +49,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-appBg bg-dashboard texture-grid text-textPrimary transition-colors duration-300">
-      <header className="sticky top-0 z-20 border-b border-appBorder/70 bg-appBg/85 backdrop-blur">
+      <header className="sticky top-0 z-20 border-b border-appBorder bg-appBg backdrop-blur">
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div>
             <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">Wind Forecast Monitoring</h1>
@@ -78,15 +57,9 @@ export default function App() {
               Compare predicted wind power with actual wind generation and analyze forecast accuracy.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}
-            className="inline-flex items-center gap-2 rounded-lg border border-appBorder bg-card px-3 py-2 text-xs text-textSecondary transition hover:border-accent hover:text-textPrimary"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
-            {theme === 'dark' ? 'Light' : 'Dark'}
-          </button>
+          <span className="rounded-full border border-appBorder bg-card px-3 py-1 text-xs font-medium text-textSecondary">
+            Classy Blue Theme
+          </span>
         </div>
       </header>
 
